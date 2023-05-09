@@ -1,9 +1,9 @@
 import os
 from enum import Enum
 
-from CsvParser import CsvParser
-from ExcelParser import ExcelParser
-from AbstractParser import AbstractParser
+from InputHandle.CsvParser import CsvParser
+from InputHandle.ExcelParser import ExcelParser
+from InputHandle.AbstractParser import AbstractParser
 
 class Source_Type(Enum):
     XLSX  = 0

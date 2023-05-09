@@ -1,13 +1,11 @@
 # import re
 import os
-import sys
 from InputHandle.InputParser import InputParser
 from InputHandle.InputParser import Source_Type
 from Translator.Translator import Translator
 from OutputHandle.JsonDumper import JsonDumper
 from OutputHandle.OutputZipper import OutputZipper
 
-# workspace_path = os.path.dirname(__file__)
 source_file = sys.argv[1]
 output_dir = os.path.dirname(source_file)
 output_json_name = 'output.json'

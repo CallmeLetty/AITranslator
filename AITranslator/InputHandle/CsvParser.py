@@ -1,5 +1,5 @@
 import csv
-from AbstractParser import AbstractParser
+from InputHandle.AbstractParser import AbstractParser
 
 class CsvParser(AbstractParser):
     """解析excel文件"""

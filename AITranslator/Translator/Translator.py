@@ -1,7 +1,7 @@
 import json, os
 import threadpool
 
-from Requestor import Requestor
+from Translator.Requestor import Requestor
 
 class Translator:
     """backEnd"""
