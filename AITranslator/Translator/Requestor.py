@@ -7,7 +7,7 @@ class Requestor(object):
         openai.api_key = os.getenv("OPENAI_API_KEY")
 
     def request(self, entry, langs) -> dict:
-        prompt = Prompt.prompt(entry, langs)
+        prompt = Prompt.prompt(entry=entry, langs=langs)
         response = openai.Completion.create(
             model="text-davinci-003",
             prompt=prompt,

@@ -56,16 +56,17 @@ class InputParser(object):
         return entry_list
 
 if __name__ == '__main__':
-    csv_path = '/Users/lettyliu/Git/AITranslator/AITranslator/InputHandle/csv_demo.csv'
-    xlsx_path = '/Users/lettyliu/Git/AITranslator/AITranslator/InputHandle/Femometer_V2_0.0.3266.xlsx'
+    csv_path = '/Users/hg/Downloads/Fasting课程内容-lessonkey.csv'
+    # xlsx_path = '/Users/lettyliu/Git/AITranslator/AITranslator/InputHandle/Femometer_V2_0.0.3266.xlsx'
     # parser = InputParser(csv_path)
     inputParser_csv = InputParser(csv_path)
-    inputParser_xlsx = InputParser(xlsx_path)
+    # inputParser_xlsx = InputParser(xlsx_path)
 
     csv_keys = inputParser_csv.keys()
-    xlsx_keys = inputParser_xlsx.keys()
+    # xlsx_keys = inputParser_xlsx.keys()
 
-    for item in inputParser_csv.entry_list():
+    for item in inputParser_csv.entry_list()[:20]:
         print(item)
+        print(",")
     # inputParser_xlsx.test()
     # print(inputParser_xlsx.keys())
