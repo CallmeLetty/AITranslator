@@ -1,3 +1,5 @@
+
+
 class Prompt:
     """提词构建类"""
     @staticmethod

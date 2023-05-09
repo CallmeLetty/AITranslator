@@ -33,7 +33,7 @@ class Translator:
         Parameters
         ----------
         metaData
-            待翻译数据，(key, source)的元祖列表
+            待翻译数据，(key, source)的元组
         langs
             输出的语种
         """
@@ -53,7 +53,7 @@ class Translator:
         for i in range(self.index, count):
             key, text = self.metaData[i]
             res = self.__translate(text)
-            res["key"] = key
+            res["Name"] = key
             result.append(res)
             self.index += 1
 
