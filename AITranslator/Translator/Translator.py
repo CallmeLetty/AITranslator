@@ -1,8 +1,8 @@
-from Requestor import Requestor
 import json, os
-from collections import deque
 import threadpool
-import threading
+from typing import Tuple
+
+from Requestor import Requestor
 
 class Translator:
     """backEnd"""
@@ -20,12 +20,12 @@ class Translator:
             self.file_path = output
 
         self.__requestor = Requestor()
-        self.index = 0
-        self.queue = deque()
+        self.result = []
         self.__pool = threadpool.ThreadPool(9) # 核心数 + 1
 
-    def sink(self, index):
-        self.index = index
+    # 暂时放弃这个功能
+    # def sink(self, index):
+        # self.index = index
 
     def config(self, metaData: list[(str, str)], langs: list[str]):
         """配置元数据和翻译语种
@@ -47,31 +47,29 @@ class Translator:
         ----------
         翻译结果的json文件路径
         """
-        result = []
-        count = len(self.metaData)
-        ## 逐条翻译（Loop）
-        for i in range(self.index, count):
-            key, text = self.metaData[i]
-            res = self.__translate(text)
-            res["Name"] = key
-            result.append(res)
-            self.index += 1
+        requests = threadpool.makeRequests(self.__translate, self.metaData, self.__callback)
+        [self.__pool.putRequest(req) for req in requests]
+        self.__pool.wait()
 
         self.__writeToFile()
 
         return self.file_path
     
-    def __callback(request, result):
+    def __callback(self, request, result):
+        """多线程"""
+        self.result.append(result)
         pass
     
-    def __writeToFile(self, data):
+    def __writeToFile(self):
         """写入到文件中"""
         with open(self.file_path, 'w') as f:
-            json.dump(data, f, allow_unicode=True)
+            json.dump(self.result, f, allow_unicode=True)
 
-    def __translate(self, entry: str) -> dict:
+    def __translate(self, entry: Tuple(str, str)) -> dict:
+        key, source = entry
         """通过gpt接口翻译词条"""
         result = self.__requestor.request(entry, self.langs)
+        result[key] = source
         return result
 
         
