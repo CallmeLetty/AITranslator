@@ -68,7 +68,7 @@ class Translator:
     def __translate(self, key: str, source: str) -> dict:
         """通过gpt接口翻译词条"""
         result = self.__requestor.request(source, self.langs)
-        result["key"] = key
+        result["Name"] = key
         return result
 
 if __name__ == '__main__':    
