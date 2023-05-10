@@ -11,6 +11,9 @@ output_dir = os.path.dirname(source_file)
 output_json_name = 'output.json'
 output_json_path = os.path.join(output_dir, output_json_name)
 
+print(">> output directory: " + output_dir)
+print(">> output json path: " + output_json_path)
+
 input_parser = InputParser(source_file)
 translator = Translator(output_json_path)
 
