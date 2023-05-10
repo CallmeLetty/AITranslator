@@ -1,0 +1,121 @@
+[
+    {
+        "Chinese": "减少疾病",
+        "English": "Reduce Diseases",
+        "Japanese": "病気を減らす",
+        "key": "lesson2_4"
+    },
+    {
+        "Chinese": "清晰的思想",
+        "English": "Clear Mind",
+        "Japanese": "クリアマインド",
+        "key": "lesson2_8"
+    },
+    {
+        "Chinese": "糖尿病和肥胖",
+        "English": "Diabetes and Obesity",
+        "Japanese": "糖尿病と肥満",
+        "key": "lesson2_2"
+    },
+    {
+        "Chinese": "间歇性禁食的好处",
+        "English": "The Benefits of Intermittent Fasting",
+        "Japanese": "インターミッテント・ファスティングの利点",
+        "key": "lesson2_title"
+    },
+    {
+        "Chinese": "更好的睡眠",
+        "        English": "Better Sleep",
+        "        Japanese": "より良い睡眠",
+        "key": "lesson2_12"
+    },
+    {
+        "Chinese": "间歇性禁食改善多个心血管健康指标，包括",
+        "English": "Intermittent fasting improves multiple indicators of cardiovascular health, including",
+        "Japanese": "間歇的な断食は、心血管健康の指標を含め、多くの指標を改善します。",
+        "key": "lesson2_5"
+    },
+    {
+        "Chinese": "血压、静息心率、高密度脂蛋白和低密度脂蛋白胆固醇水平。",
+        "English": "Blood pressure, resting heart rate, levels of HDL and LDL cholesterol.",
+        "Japanese": "血圧、休止心拍数、HDLおよびLDLコレステロールレベル。",
+        "key": "lesson2_6"
+    },
+    {
+        "Chinese": "提高記憶力，給你一個清晰的思想。",
+        "English": "Improve memory and give you a clear mind.",
+        "Japanese": "記憶力を向上させ、明確な心を与える。",
+        "key": "lesson2_10"
+    },
+    {
+        "Chinese": "动物和细胞研究也表明它对降低癌症风险有积极的影响。",
+        "        English": "Animal and cell studies also show its positive effects on cutting cancer risk.",
+        "        Japanese": "動物および細胞研究により、がんリスクを削減する上でのそのポジティブな効果も示されています。",
+        "key": "lesson2_7"
+    },
+    {
+        "Chinese": "保持血糖水平稳定也有助于避免情绪剧烈波动。",
+        "English": "A stable blood sugar level also helps avoid violent mood swings.",
+        "Japanese": "血糖レベルを安定させることで、激しいムードの変化を避けることができます。",
+        "key": "lesson2_11"
+    },
+    {
+        "Chinese": "细胞对间歇性禁食的反应，导致",
+        "        English": "The way cells respond to intermittent fasting, leads to",
+        "        Japanese": "間歇的断食に対する細胞の反応がもたらす",
+        "key": "lesson2_15"
+    },
+    {
+        "Chinese": "强大的免疫力和更长的寿命",
+        "English": "Strong Immune and Longer Life",
+        "Japanese": "強い免疫力と長い寿命",
+        "key": "lesson2_14"
+    },
+    {
+        "Chinese": "抗氧化防御、DNA修复和自噬表达增加",
+        "English": "Increased expression of antioxidant defenses, DNA repair and autophagy.",
+        "Japanese": "抗酸化防御、DNA修復、およびオートファジーの表現の増加",
+        "key": "lesson2_16"
+    },
+    {
+        "Chinese": "许多人禁食以燃烧脂肪和减肥，但是好处远不止于此。简而言之，它可以为你提供更健康的身体，更敏锐的思维和更长的寿命！",
+        "Japanese": "多くの人が脂肪を燃焼して体重を減らすために断食しますが、その利点はそれだけではありません。簡単に言えば、健康な体、鋭い精神、長い寿命を提供します！",
+        "key": "lesson2_1"
+    },
+    {
+        "Chinese": "禁食有助于我减肥吗？",
+        "        English": "How Does Fasting Help Me Lose Weight?",
+        "        Japanese": "絶食は私の体重を減らすのに役立つのですか？",
+        "key": "lesson3_title"
+    },
+    {
+        "Chinese": "研究发现，断食可以提高动物的工作记忆力和成年人的口头记忆力。断食还可以提高大脑功能，包括大脑结构和神经细胞的生长。因此，它可能有助于",
+        "English": "Studies discovered that intermittent fasting boosts working memory in animals and verbal memory in adult humans. Fasting also boosts brain function in terms of brain structure and nerve cell growth. So it could help",
+        "Japanese": "動物の短期記憶と成人の言語記憶を高めるという研究が発見されました。断食は、脳構造や神経細胞の成長においても脳機能を高めることができます。それで、それは役に立つ可能性があります。",
+        "key": "lesson2_9"
+    },
+    {
+        "Chinese": "一些研究表明，斋戒可以通过降低快速眼球运动（REM）睡眠来改善睡眠。其他研究表明斋戒可能会提高使你白天更清醒的化学物质的水平。",
+        "English": "Some studies say fasting improves sleep by lowering the amount of rapid eye movement (REM) sleep. Other studies suggest fasting might raise the levels of chemicals that make you feel more awake during the day.",
+        "Japanese": "いくつかの研究によると、断食は、急速な眼球運動（REM）の睡眠量を低下させることにより睡眠を改善すると言われています。他の研究では、断食は、白日中により覚醒しやすくなる化学物質のレベルを上げる可能性があると指摘されています。",
+        "key": "lesson2_13"
+    },
+    {
+        "Chinese": "这些是你身体自然清理受损细胞和回收有用的细胞成分的方式。这可能会带来很好的结果，比如更强的免疫系统和更长的寿命。",
+        "English": "These are your body's natural way of cleaning damaged cells and recycling useful cellular components. These can lead to potentially great results, like a stronger immune system and a longer life.",
+        "Japanese": "これらは、損傷した細胞を清掃し、有用な細胞成分を再利用する自然な方法です。これらは、より強い免疫システムや長い寿命など、潜在的な優れた結果をもたらす可能性があります。",
+        "key": "lesson2_17"
+    },
+    {
+        "Chinese": "断食有助于改善胰岛素抵抗力，有助于保持血糖水平稳定。它可以预防高脂肪饮食引起的肥胖，并改善糖尿病视网膜病变。研究结果表明，肥胖的成年人可以通过间歇性断食减肥。",
+        "English": "Fasting improves Insulin Resistance and helps keep blood sugar level stable. It prevents obesity caused by a high-fat diet, and improves diabetic retinopathy. Research studies show that obese adult lose weight through intermittent fasting.",
+        "Japanese": "断食はインスリン抵抗性を改善し、血糖レベルを安定させるのに役立ちます。高脂肪食による肥満を防ぎ、糖尿病性網膜症を改善します。研究結果によると、肥満の成人は間歇的な断食によって体重を減らすことができます。",
+        "key": "lesson2_3"
+    },
+    {
+        "Chinese": "其他禁食的好处包括更清晰的皮肤，缓解炎症，并且感觉良好。事实上，禁食不仅是一种减肥方法，也是一种更健康的生活方式，你可以鼓励你的朋友和家人一起来做。",
+        "English": "Other benefits of fasting include clearer skin, easing inflammation and generally feeling good. In fact, fasting is not only a weight-loss method but also a way to lead a healthier lifestyle which you can encourage your friends and family to do alongside you.",
+        "Japanese": "禁食の利点には、よりクリアな肌、炎症の抑制、そして全体的な良い感じがあります。実際、禁食は体重減少の方法だけでなく、健康的なライフスタイルを導く方法でもあります。友人や家族と一緒に行うことを奨励することができます。",
+        "key": "lesson2_18"
+    }
+]

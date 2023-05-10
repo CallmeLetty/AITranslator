@@ -37,6 +37,6 @@ class Requestor(object):
 
 if __name__ == '__main__':    
     # p=PromptConstructor("/Users/doublecircle/Desktop/test.xlsx")
-    prompt ="Translate this into 1. Chinese 2. English 3. Turkish\n\n· Solo %s dopo la prova gratuita\n\n"
-    text = Requestor().request(prompt)    
+    val = "Many people fast to burn fat and lose weight, but the benefits are much more than that. In short, it gives you a healthier body, a sharper mind and a longer life!"
+    text = Requestor().request(val, ["Chinese", "English", "Japanese"])
     print(text)

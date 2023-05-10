@@ -6,18 +6,14 @@ from Translator.Requestor import Requestor
 class Translator:
     """backEnd"""
 
-    def __init__(self, output: str = None):
+    def __init__(self, output: str):
         """
         Parameters
         ----------
         output
             指定输出地址
         """
-        if not output:
-            self.file_path = os.path.join(os.getcwd(), 'output.json')
-        else:
-            self.file_path = output
-
+        self.file_path = output
         self.__requestor = Requestor()
         self.result = []
         self.__pool = threadpool.ThreadPool(9) # 核心数 + 1
@@ -47,7 +43,11 @@ class Translator:
         翻译结果的json文件路径
         """
         args_list = [([key, source], None) for key, source in self.metaData]
-        requests = threadpool.makeRequests(self.__translate, args_list, self.__callback)
+        requests = threadpool.makeRequests(
+            self.__translate, 
+            args_list, 
+            self.__callback)
+        
         [self.__pool.putRequest(req) for req in requests]
         self.__pool.wait()
 
@@ -63,12 +63,12 @@ class Translator:
     def __writeToFile(self):
         """写入到文件中"""
         with open(self.file_path, 'w') as f:
-            json.dump(self.result, f)
+            json.dump(self.result, f, ensure_ascii=False)
 
     def __translate(self, key: str, source: str) -> dict:
         """通过gpt接口翻译词条"""
         result = self.__requestor.request(source, self.langs)
-        result[key] = key
+        result["key"] = key
         return result
 
 if __name__ == '__main__':    

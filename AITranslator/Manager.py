@@ -1,5 +1,5 @@
 # import re
-import os
+import os, sys
 from InputHandle.InputParser import InputParser
 from InputHandle.InputParser import Source_Type
 from Translator.Translator import Translator
