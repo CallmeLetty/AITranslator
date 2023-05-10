@@ -4,7 +4,8 @@ from Translator.Prompt import Prompt
 class Requestor(object):
     """openai请求"""
     def __init__(self):
-        openai.api_key = os.getenv("OPENAI_API_KEY")
+        # openai.api_key = os.getenv("OPENAI_API_KEY")
+        openai.api_key = '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'
 
     def request(self, entry, langs) -> dict:
         prompt = Prompt.prompt(entry=entry, langs=langs)
