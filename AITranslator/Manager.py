@@ -5,6 +5,7 @@ from InputHandle.InputParser import Source_Type
 from Translator.Translator import Translator
 from OutputHandle.JsonDumper import JsonDumper
 from OutputHandle.OutputZipper import OutputZipper
+from OutputHandle.OutputUploader import OutputUploader
 
 source_file = sys.argv[1]
 output_dir = os.path.dirname(source_file)
@@ -33,6 +34,11 @@ elif input_parser.source_type == Source_Type.XLSX:
     jsonDumper.jsonToXlsx("output")
 
 # 4. 压缩
-file_news = output_dir +'.zip' # 压缩后文件夹的名字
+file_name = output_dir +'.zip' # 压缩后文件夹的名字
 zipper = OutputZipper()
-zipper.zip_ya(output_dir,file_news)
+zipper.zip(output_dir,file_name)
+
+# 5. 上传
+uploader = OutputUploader()
+local_file_path = output_dir + '/' + file_name
+uploader.upload(local_file_path,file_name)

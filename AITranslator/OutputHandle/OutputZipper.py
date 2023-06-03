@@ -2,7 +2,7 @@ import zipfile
 import os
 
 class OutputZipper(object):
-    def zip_ya(self,startdir,file_news):
+    def zip(self,startdir,file_news):
         file_news = startdir +'.zip' # 压缩后文件夹的名字
         z = zipfile.ZipFile(file_news,'w',zipfile.ZIP_DEFLATED) #参数一：文件夹名
         for dirpath, dirnames, filenames in os.walk(startdir):
