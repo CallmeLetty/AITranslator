@@ -6,7 +6,7 @@ from qiniu import qiniu_client as qiniu
 
 class OutputUploader(object):
     def upload(self,local_file_path,zip_name):
-        remote_file_path = 'ai_translator/' + zip_name
+        remote_file_path = 'ai_translator/' + zip_name + '.zip'
         qiniu.qiniu_upload(local_file_path, remote_file_path)
         download_url = 'https://s.bongmi.com/' + remote_file_path
         print("download_url: " + download_url)
