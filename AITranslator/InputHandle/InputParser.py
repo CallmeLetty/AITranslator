@@ -31,9 +31,11 @@ class InputParser(object):
             return self.parser.get_column_value(1)
         
     def entry_list(self):
+        keys = self.keys()
         entry_list = []
-        for index in range(0, len(self.keys())):
-            key = self.keys()[index]
+
+        for index in range(0, len(keys)):
+            key = keys[index]
 
             # 过滤掉key为空的情况
             if not key: 
@@ -41,6 +43,8 @@ class InputParser(object):
 
             # 取第一个不为空的值作为source（不关心语言）
             current_row = self.parser.get_row_value(index)
+            if self.source_type == Source_Type.XLSX:
+                current_row = current_row[1:]
             
             # 过滤掉已经翻译完成的行
             # if None not in current_row:

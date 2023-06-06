@@ -17,7 +17,6 @@ output_json_name = 'output.json'
 output_json_path = os.path.join(output_dir_path, output_json_name)
 
 print(">> output directory: " + output_dir_path)
-print(">> output json path: " + output_json_path)
 
 input_parser = InputParser(source_file)
 translator = Translator(output_json_path)
@@ -25,6 +24,8 @@ translator = Translator(output_json_path)
 # 1. 文件解析
 langs = input_parser.langs()
 entry_list = input_parser.entry_list()
+print(">>>> languages:" + str(langs))
+print(">>>> entry_list:" + str(entry_list))
 
 # 2. AI翻译
 translator.config(entry_list, langs)
