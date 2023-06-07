@@ -5,7 +5,7 @@ class Requestor(object):
     """openai请求"""
     def __init__(self):
         # openai.api_key = os.getenv("OPENAI_API_KEY")
-        openai.api_key = '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'
+        openai.api_key = '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'
 
     def request(self, entry, langs) -> dict:
         prompt = Prompt.prompt(entry=entry, langs=langs)
