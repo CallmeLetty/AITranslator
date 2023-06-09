@@ -1,11 +1,12 @@
-import os, re, openai
-from Translator.Prompt import Prompt
+import os
+import re
+import openai
+from Prompt import Prompt
 
 class Requestor(object):
     """openai请求"""
     def __init__(self):
-        # openai.api_key = os.getenv("OPENAI_API_KEY")
-        openai.api_key = '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'
+        openai.api_key = os.getenv("OPENAI_API_KEY")
 
     def request(self, entry, langs) -> dict:
         prompt = Prompt.prompt(entry=entry, langs=langs)
