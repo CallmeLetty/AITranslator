@@ -1,7 +1,7 @@
 import os
 import re
 import openai
-from Prompt import Prompt
+from Translator.Prompt import Prompt
 
 class Requestor(object):
     """openai请求"""
