@@ -21,11 +21,19 @@ class JsonDumper(object):
         csv_write = csv.writer(f)
 
         # 先写入首行
-        csv_write.writerow(rows[0].keys())
+        keys_row = list(rows[0].keys())
+        keys_row.remove("Name")
+        keys_row.insert(0,"Name")
+        csv_write.writerow(keys_row)
         
         for dict in rows:
-            csv_write.writerow(dict.values()) 
-
+            values = list(dict.values())
+            name_index = list(dict.keys()).index("Name")
+            name_value = values[name_index]
+            del values[name_index]
+            values.insert(0,name_value)
+            csv_write.writerow(values) 
+            
         f.close()
 
     def jsonToXlsx(self,xlsx_name):
@@ -36,5 +44,18 @@ class JsonDumper(object):
             data = json.load(f)  # 打开 json 文件
         f.close()
 
-        dataFrame = pandas.DataFrame(data)
+        keys_row = list(data[0].keys())
+        keys_row.remove("Name")
+        keys_row.insert(0,"Name")
+
+        dataFrame = pandas.DataFrame(data,columns=keys_row)
         dataFrame.to_excel(xlsx_path,index=False)
+
+
+if __name__ == '__main__':    
+    output_dir_path = "/Users/lettyliu/Downloads/2023-06-14-10-20-02"
+    output_json_name = 'output.json'
+    jsonDumper = JsonDumper(output_dir_path,output_json_name)
+    jsonDumper.jsonToXlsx("output")
+
+    # keys_row = ['English', 'German', 'Japanese', 'French', 'Italian', 'Portuguese', 'Traditional Chinese', 'Name']
