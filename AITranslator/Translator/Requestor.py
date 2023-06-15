@@ -31,22 +31,19 @@ class Requestor(object):
         result = dict()
         for index, line in enumerate(lines):
             res = re.match(r'(.+)[:：]\s?(.+)', line)
-            if index < len(self.langs):
-                lang = self.langs[index]
-            else:
-                print("error: Parse out of bounds")
-                break
-
             if res:
-                result[lang] = res.group(2)
+                result[res.group(1)] = res.group(2)
             else:
                 print("error: \n{}".format(line))
+
+        if "中文" in result:
+            result["Traditional Chinese"] = result["中文"]
         
         return result
     
 
 if __name__ == '__main__':    
     # p=PromptConstructor("/Users/doublecircle/Desktop/test.xlsx")
-    val = "間歇性斷食可以改善多種心血管健康指標，包括"
+    val = "穩定的血糖水平也有助於避免情緒劇烈波動。"
     text = Requestor().request(val, ["Traditional Chinese",	"English",	"German",	"Japanese",	"French",	"Italian",	"Portuguese"])
     print(text)
