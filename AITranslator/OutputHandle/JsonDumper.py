@@ -25,13 +25,13 @@ class JsonDumper(object):
         keys_row.remove("Name")
         keys_row.insert(0,"Name")
         csv_write.writerow(keys_row)
-        
+
         for dict in rows:
-            values = list(dict.values())
-            name_index = list(dict.keys()).index("Name")
-            name_value = values[name_index]
-            del values[name_index]
-            values.insert(0,name_value)
+            # 由于csv是纯文本文件，需要按照keys_row进行排序
+            values = []
+            for key in keys_row:
+                values.append(dict.get(key))
+
             csv_write.writerow(values) 
             
         f.close()
@@ -53,9 +53,9 @@ class JsonDumper(object):
 
 
 if __name__ == '__main__':    
-    output_dir_path = "/Users/lettyliu/Downloads/2023-06-14-10-20-02"
+    output_dir_path = "/Users/lettyliu/Downloads/2023-06-15-09-53-25"
     output_json_name = 'output.json'
     jsonDumper = JsonDumper(output_dir_path,output_json_name)
-    jsonDumper.jsonToXlsx("output")
+    jsonDumper.jsonToCsv("output")
 
     # keys_row = ['English', 'German', 'Japanese', 'French', 'Italian', 'Portuguese', 'Traditional Chinese', 'Name']
