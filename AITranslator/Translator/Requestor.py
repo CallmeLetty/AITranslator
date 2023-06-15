@@ -9,6 +9,7 @@ class Requestor(object):
         openai.api_key = os.getenv("OPENAI_API_KEY")
 
     def request(self, entry, langs) -> dict:
+        self.langs = langs
         prompt = Prompt.prompt(entry=entry, langs=langs)
         response = openai.Completion.create(
             model="text-davinci-003",
@@ -28,17 +29,24 @@ class Requestor(object):
         """解析返回值"""
         lines = [line for line in data.split('\n') if line.strip() != '']
         result = dict()
-        for line in lines:
-            res = re.match(r'(.+):\s(.+)', line)
+        for index, line in enumerate(lines):
+            res = re.match(r'(.+)[:：]\s?(.+)', line)
+            if index < len(self.langs):
+                lang = self.langs[index]
+            else:
+                print("error: Parse out of bounds")
+                break
+
             if res:
-                result[res.group(1)] = res.group(2)
+                result[lang] = res.group(2)
             else:
                 print("error: \n{}".format(line))
+        
         return result
     
 
 if __name__ == '__main__':    
     # p=PromptConstructor("/Users/doublecircle/Desktop/test.xlsx")
-    val = "Many people fast to burn fat and lose weight, but the benefits are much more than that. In short, it gives you a healthier body, a sharper mind and a longer life!"
-    text = Requestor().request(val, ["Chinese", "English", "Japanese"])
+    val = "間歇性斷食可以改善多種心血管健康指標，包括"
+    text = Requestor().request(val, ["Traditional Chinese",	"English",	"German",	"Japanese",	"French",	"Italian",	"Portuguese"])
     print(text)
