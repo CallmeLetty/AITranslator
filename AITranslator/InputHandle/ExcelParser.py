@@ -17,7 +17,8 @@ class ExcelParser(AbstractParser):
     def get_header_row(self):
         row = self.get_row_value(-1)
         # 删除“Name”
-        return row[1:]
+        # return row[1:]
+        return row
         
     """获取某一行的数据"""
     def get_row_value(self, row_num):
