@@ -25,6 +25,7 @@ translator = Translator(output_json_path)
 langs = input_parser.langs()
 entry_list = input_parser.entry_list()
 print(">>>> languages:" + str(langs))
+print(">> entry_list: " + str(entry_list))
 
 # 2. AI翻译
 translator.config(entry_list, langs)
